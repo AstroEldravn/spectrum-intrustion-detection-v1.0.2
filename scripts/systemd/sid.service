@@ -1,0 +1,16 @@
+[Unit]
+Description=Spectrum Intrusion Detection (SID)
+After=network-online.target
+Wants=network-online.target
+
+[Service]
+Type=simple
+User=root
+WorkingDirectory=%h/sid_runtime
+ExecStart=/usr/bin/env sid-run -c /etc/sid/sid.yaml
+Restart=on-failure
+RestartSec=3
+Environment=PYTHONUNBUFFERED=1
+
+[Install]
+WantedBy=multi-user.target

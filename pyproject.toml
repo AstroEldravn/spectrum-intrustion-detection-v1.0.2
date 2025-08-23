@@ -1,0 +1,33 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "spectrum-ids"
+version = "1.0.0"
+description = "Spectrum Intrusion Detection (SID): an IDS for the electromagnetic spectrum."
+readme = "README.md"
+requires-python = ">=3.9"
+authors = [{name="Jonathan K. Fredlund"}]
+license = {text="MIT"}
+keywords = ["SDR", "IDS", "RF", "LTE", "Wi-Fi", "spectrum", "security"]
+dependencies = [
+  "typer>=0.12",
+  "rich>=13.7",
+  "PyYAML>=6.0",
+  "psutil>=5.9",
+  "paho-mqtt>=2.1",
+  "requests>=2.31",
+  "aiohttp>=3.9",
+  "uvloop>=0.19; sys_platform == 'linux'",
+  "scapy>=2.5; sys_platform != 'win32'",
+]
+
+[project.scripts]
+sid = "sid.main:app"
+sid-run = "sid.main:run_command"
+sid-sim = "sid.main:simulate_command"
+
+[tool.setuptools.packages.find]
+where = [""]
+include = ["sid*"]

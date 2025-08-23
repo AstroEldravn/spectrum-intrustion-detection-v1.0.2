@@ -1,0 +1,35 @@
+# Hobbyist profile (default)
+simulate: true
+profile: hobbyist
+log_level: INFO
+
+sinks:
+  - type: console
+  - type: file
+    path: sid_events.jsonl
+
+modules:
+  wifi_deauth:
+    enabled: true
+    iface: wlan0
+    deauth_threshold_per_min: 10
+  spectrum_occupancy:
+    enabled: true
+    engine: auto
+    step_db: 12
+    watch_ranges:
+      - {start_mhz: 433, stop_mhz: 435, step_khz: 50}
+      - {start_mhz: 860, stop_mhz: 900, step_khz: 100}
+  lte_cellwatch:
+    enabled: false
+    whitelist_path: configs/rules/lte_whitelist.yaml
+  gnss_spoof:
+    enabled: false
+    gpsd: "localhost:2947"
+  firewall_listener:
+    enabled: false
+    journalctl_filter: "kernel"
+
+whitelists:
+  wifi_bssid: []
+  lte_cells: []

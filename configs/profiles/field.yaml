@@ -1,0 +1,45 @@
+# Field / Military profile (receive-only)
+simulate: false
+profile: field
+log_level: INFO
+
+sinks:
+  - type: console
+  - type: file
+    path: /var/log/sid_events.jsonl
+  - type: syslog
+    address: /dev/log
+  # Uncomment to publish to a team broker
+  # - type: mqtt
+  #   host: 192.0.2.10
+  #   topic: sid/events
+
+modules:
+  wifi_deauth:
+    enabled: true
+    iface: wlan0
+    deauth_threshold_per_min: 6     # stricter
+  spectrum_occupancy:
+    enabled: true
+    engine: auto
+    step_db: 10                     # more sensitive
+    watch_ranges:
+      - {start_mhz: 1217, stop_mhz: 1250, step_khz: 100}   # L2
+      - {start_mhz: 1570, stop_mhz: 1600, step_khz: 100}   # L1
+      - {start_mhz: 225,  stop_mhz: 450,  step_khz: 50}    # VHF/UHF
+      - {start_mhz: 860,  stop_mhz: 900,  step_khz: 100}   # ISM/Cell
+      - {start_mhz: 2400, stop_mhz: 2500, step_khz: 250}   # 2.4 GHz
+      - {start_mhz: 5150, stop_mhz: 5925, step_khz: 500}   # 5 GHz
+  lte_cellwatch:
+    enabled: true
+    whitelist_path: /etc/sid/lte_whitelist.yaml
+  gnss_spoof:
+    enabled: true
+    gpsd: "localhost:2947"
+  firewall_listener:
+    enabled: true
+    journalctl_filter: "kernel"
+
+whitelists:
+  wifi_bssid: []
+  lte_cells: []

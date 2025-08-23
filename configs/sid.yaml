@@ -1,0 +1,43 @@
+# Default configuration for SID
+simulate: true
+profile: hobbyist
+
+log_level: INFO
+
+sinks:
+  - type: console
+  - type: file
+    path: sid_events.jsonl
+
+modules:
+  wifi_deauth:
+    enabled: true
+    iface: wlan0
+    deauth_threshold_per_min: 10
+  spectrum_occupancy:
+    enabled: true
+    engine: auto   # auto|rtl_power|soapy_power
+    step_db: 12
+    watch_ranges:
+      - {start_mhz: 433, stop_mhz: 435, step_khz: 50}
+  lte_cellwatch:
+    enabled: false
+    whitelist_path: configs/rules/lte_whitelist.yaml
+  gnss_spoof:
+    enabled: false
+    gpsd: "localhost:2947"
+  firewall_listener:
+    enabled: false
+    journalctl_filter: "kernel"
+
+whitelists:
+  wifi_bssid: []
+  lte_cells: []
+
+# MQTT / Webhook examples (disable by default)
+# sinks:
+#   - type: mqtt
+#     host: 127.0.0.1
+#     topic: sid/events
+#   - type: webhook
+#     url: http://127.0.0.1:8000/ingest

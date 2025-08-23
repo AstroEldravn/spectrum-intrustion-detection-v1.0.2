@@ -1,0 +1,4 @@
+# LTE whitelist: trusted cells
+# Each entry: earfcn, pci, plmn (MCC+MNC), optional note
+trusted:
+  - {earfcn: 6300, pci: 123, plmn: "00101", note: test_cell}
