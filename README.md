@@ -239,20 +239,18 @@ journalctl -u sid -f
 
 ## GitHub: initialize, tag, and push
 
-Below is a ready sequence using your GitHub account **AstroEldravn** and a repo named **spectrum-ids**. Change the URL if you pick a different name.
-
 ```bash
 git init
 git branch -M main
 git add .
-git commit -m "feat: Spectrum Intrusion Detection v1.0.0"
+git commit -m "feat: Spectrum Intrusion Detection v1.0.2"
 git tag -a v1.0.0 -m "SID v1.0.0"
 
 # Set your origin (SSH form shown)
-git remote add origin git@github.com:AstroEldravn/spectrum-ids.git
+git remote add origin git@github.com:AstroEldravn/spectrum-intrustion-detection-v1.0.2.git
 
 # Or HTTPS:
-# git remote add origin https://github.com/AstroEldravn/spectrum-ids.git
+# git remote add origin https://www.github.com/AstroEldravn/spectrum-intrustion-detection-v1.0.2.git
 
 git push -u origin main --tags
 ```
