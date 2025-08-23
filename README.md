@@ -1,4 +1,8 @@
-# Spectrum Intrusion Detection (SID) v1.0.0
+# Spectrum Intrusion Detection (SID) v1.0.2
+* Added Field/Military as well as hobbyist profiles in configs/profiles
+* Added Profile switcher: [scripts/apply_profile.sh]
+* Added systemd installer: [scripts/install_systemd.sh]
+* README updates with profile instructions and a Git/GitHub push + tag recipe prefilled for AstroEldravn/spectrum-ids
 
 An intrusion detection system for the **electromagnetic spectrum**. SID ties together SDR sweeps, Wi‑Fi/LTE/GNSS observers, and host/network signals into a unified alert pipeline. It runs on Raspberry Pi, Debian/Ubuntu bare metal, and other Linuxes; macOS works for most features; Windows supports a subset.
 
