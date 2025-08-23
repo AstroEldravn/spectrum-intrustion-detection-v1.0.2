@@ -4,7 +4,7 @@
 * Added systemd installer: [scripts/install_systemd.sh]
 * README updates with profile instructions and a Git/GitHub push + tag recipe prefilled for AstroEldravn/spectrum-ids
 
-An intrusion detection system for the **electromagnetic spectrum**. SID ties together SDR sweeps, Wi‑Fi/LTE/GNSS observers, and host/network signals into a unified alert pipeline. It runs on Raspberry Pi, Debian/Ubuntu bare metal, and other Linuxes; macOS works for most features; Windows supports a subset.
+An intrusion detection system for the **electromagnetic spectrum**. SID ties together SDR sweeps, Wi‑Fi/LTE/GNSS observers, and host/network signals into a unified alert pipeline. It runs on Raspberry Pi, Debian/Ubuntu bare metal, and other Linux distributions, it should work on most flavors of Linux, but any Debian based derivative of Linux is where this *should* shine.; macOS isn't suggested but works for most features; Windows supports a subset.
 
 > **Mission:** give defenders, hobbyists, and field teams a practical, scriptable, and *explainable* sensor that can flag RF anomalies: deauth floods, rogue LTE cells, GNSS spoofing symptoms, suspicious spectrum occupancy spikes, and more.
 
