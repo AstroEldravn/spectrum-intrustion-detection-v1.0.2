@@ -1,3 +1,10 @@
+[![Build](https://img.shields.io/badge/build-passing-brightgreen)](#)
+[![License](https://img.shields.io/badge/license-MIT-blue)](LICENSE)
+[![Python](https://img.shields.io/badge/python-3.9%2B-blue)](#)
+[![Platforms](https://img.shields.io/badge/platforms-Linux%20%7C%20macOS%20%7C%20Windows-informational)](#)
+[![Devices](https://img.shields.io/badge/SDR-RTL--SDR%20%7C%20HackRF%20%7C%20rtl_tcp-success)](#)
+[![Raspberry Pi](https://img.shields.io/badge/Raspberry%20Pi-ready-red)](#)
+
 # Spectrum Intrusion Detection (SID) v1.0.2
 * Added Field/Military as well as hobbyist profiles in configs/profiles
 * Added Profile switcher: [scripts/apply_profile.sh]
