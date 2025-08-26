@@ -6,6 +6,11 @@
 
 An intrusion detection system for the **electromagnetic spectrum**. SID ties together SDR sweeps, Wi‑Fi/LTE/GNSS observers, and host/network signals into a unified alert pipeline. It runs on Raspberry Pi, Debian/Ubuntu bare metal, and other Linux distributions, it should work on most flavors of Linux, but any Debian based derivative of Linux is where this *should* shine.; macOS isn't suggested but works for most features; Windows supports a subset.
 
+## PIPELINE / COLLABORATION
+- https://github.com/BPFLNALCR/sdr-watch
+- sdr-watch is a Wideband scanner, baseline builder, and bandplan mapper for SDR devices with a lightweight web dashboard.
+- Eventually I want to get this flipper spectrum companion to work in conjunction with the sdr-watch as this program has an intuitive WebGUI in development for visual categorization and multiple SDR use
+
 > **Mission:** give defenders, hobbyists, and field teams a practical, scriptable, and *explainable* sensor that can flag RF anomalies: deauth floods, rogue LTE cells, GNSS spoofing symptoms, suspicious spectrum occupancy spikes, and more.
 
 ---
